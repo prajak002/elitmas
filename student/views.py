@@ -124,4 +124,14 @@ def check_marks_view(request,pk):
 def student_marks_view(request):
     courses=QMODEL.Course.objects.all()
     return render(request,'student/student_marks.html',{'courses':courses})
-  
+ 
+@login_required(login_url='studentlogin')
+@user_passes_test(is_student)
+def student_game_view(request):
+     return render(request,'student/play_games.html')
+login_required(login_url='studentlogin')
+@user_passes_test(is_student)
+def student_sudoku_view(request):
+     return render(request,'student/sudoku.html')
+
+

@@ -7,7 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('teacher/',include('teacher.urls')),
     path('student/',include('student.urls')),
-    
+   
 
 
     path('',views.home_view,name=''),

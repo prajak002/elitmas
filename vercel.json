@@ -1,0 +1,12 @@
+{
+    "builds":[{
+        "src": "onlinexam/wsgi.py",
+        "use":"vercel/python",
+        "config":{"maxlambdasize":  "15mb" , "runtime":"python/3.11"}
+
+    }],
+    "routes":[{
+        "src":"/(>*)",
+        "dest":"onlinexam/wsgi.py"
+    }]
+}
